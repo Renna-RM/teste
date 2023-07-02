@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #4287f5; /* Cor atraente */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Adiciona uma posição relativa */
+  }
+  header>div{
+    font-size: 35px;
+  }
+
+  .logo {
+    width: 100px; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+  }
+
+  ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  ul.menu li {
+    margin-right: 10px;
+  }
+
+  ul.menu li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff; /* Cor do texto */
+    background-color: #333; /* Cor do fundo */
+    border-radius: 4px;
+  }
+
+  ul.menu li a:hover {
+    background-color: #555;
+  }
+
+  /* Adiciona a borda lateral */
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px; /* Largura da borda */
+    background-color: #ffca28; /* Cor da borda */
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .condominio {
+    width: 150px; /* Ajuste a largura conforme necessário */
+    height: 150px; /* Ajuste a altura conforme necessário */
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .condominio:hover {
+    background-color: #ddd;
+  }

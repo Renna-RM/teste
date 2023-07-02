@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas Condominio</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        
+        main {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4287f5;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3c6fb7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img class="logo" src="download.jpg" alt="Logo">
+        </div>
+        <div class="info-container">
+          <div class="contact-info">Vendas de Condominio</div>
+          <div class="email-info">Ponte Alta</div>
+        </div>
+        <ul class="menu">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../contato.html">Contatos</a></li>
+        </ul>
+    </header>
+    
+    <main>
+        <p>Nome:</p>
+        <input type="text" placeholder="Digite seu nome"> 
+        <p>CPF:</p>
+        <input type="text" placeholder="Digite seu CPF">
+        <p>Telefone:</p>
+        <input type="tel" placeholder="Digite seu telefone">
+        <p>Entrada:</p>
+        <input type="number" placeholder="Digite o valor de entrada">
+        <p>Parcelas:</p>
+        <input type="number" placeholder="Digite o número de parcelas">
+        <button onclick="salvarDados()">Salvar</button>
+        <p><button><a href="../condominio1.html">Voltar</a></button></p>
+    </main>
+    <script>
+      
+      function salvarDados() {
+    // Obter os valores dos campos de entrada
+    var nome = document.querySelector('input[type="text"]').value;
+    var cpf = document.querySelector('input[type="text"]').value;
+    var telefone = document.querySelector('input[type="tel"]').value;
+    var entrada = document.querySelector('input[type="number"]').value;
+    var parcelas = document.querySelector('input[type="number"]').value;
+
+    // Criar o conteúdo do arquivo de texto
+    var conteudo = "Nome: " + nome + "\n";
+    conteudo += "CPF: " + cpf + "\n";
+    conteudo += "Telefone: " + telefone + "\n";
+    conteudo += "Entrada: " + entrada + "\n";
+    conteudo += "Parcelas: " + parcelas;
+
+    // Criar um elemento de link para download
+    var link = document.createElement('a');
+    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(conteudo);
+    link.download = 'dados.txt';
+    link.style.display = 'none';
+
+    // Adicionar o link ao corpo do documento
+    document.body.appendChild(link);
+
+    // Simular o clique no link para iniciar o download
+    link.click();
+
+    // Remover o link do corpo do documento
+    document.body.removeChild(link);
+
+    // Exibir uma mensagem de sucesso
+    alert("Dados salvos com sucesso!");
+  }
+</script>
+</body>
+</html>

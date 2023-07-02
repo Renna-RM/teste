@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas Condominio</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        main {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"] {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: #4287f5;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3c6fb7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img class="logo" src="download.jpg" alt="Logo">
+        </div>
+        <div class="info-container">
+          <div class="contact-info">Vendas de Condominio</div>
+          <div class="email-info">Ponte Alta</div>
+        </div>
+        <ul class="menu">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../contato.html">Contatos</a></li>
+        </ul>
+    </header>
+    
+    <main>
+        <p>Nome:</p>
+        <input id="nomeInput" type="text" placeholder="Digite seu nome"> 
+        <p>CPF:</p>
+        <input id="cpfInput" type="text" placeholder="Digite seu CPF">
+        <p>Telefone:</p>
+        <input id="telefoneInput" type="tel" placeholder="Digite seu telefone">
+        <p>Entrada:</p>
+        <input id="entradaInput" type="number" placeholder="Digite o valor de entrada">
+        <p>Parcelas:</p>
+        <input id="parcelasInput" type="number" placeholder="Digite o número de parcelas">
+        <button onclick="salvarDados()">Salvar</button>
+        <p><button><a href="../condominio1.html">Voltar</a></button></p>
+    </main>
+
+    <script>
+        function salvarDados() {
+            var nome = document.getElementById("nomeInput").value;
+            var cpf = document.getElementById("cpfInput").value;
+            var telefone = document.getElementById("telefoneInput").value;
+            var entrada = document.getElementById("entradaInput").value;
+            var parcelas = document.getElementById("parcelasInput").value;
+
+            document.getElementById("nomeInput").value = nome;
+            document.getElementById("cpfInput").value = cpf;
+            document.getElementById("telefoneInput").value = telefone;
+            document.getElementById("entradaInput").value = entrada;
+            document.getElementById("parcelasInput").value = parcelas;
+
+            alert("Dados salvos com sucesso!");
+        }
+    </script>
+</body>
+</html>
